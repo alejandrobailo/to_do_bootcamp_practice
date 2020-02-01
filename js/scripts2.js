@@ -81,16 +81,27 @@ function captureDelelteBtn() {
 
 let saveBtn = document.querySelector('#save');
 
-saveBtn.addEventListener('click', item => {
-    taskList.push(taskObj);
-    newTask();
+saveBtn.addEventListener('click', e => {
+    e.preventDefault();
+    let priority = document.querySelector('#priority').value
+    let name = document.querySelector('#type').value
+
+    //validaciones:
+    if (priority != '' && name[0] != 0 && name != '') {
+        taskList.push(taskObj);
+        newTask();
+    }
+
+    //reseteo del form
+    document.querySelector('#form').reset();
 })
+
 
 //capture inputs new task
 
 function newTask() {
-    let name = document.querySelector('#type').value
-    let priority = document.querySelector('#priority').value
+    name = document.querySelector('#type').value
+    priority = document.querySelector('#priority').value
     let id = taskList[taskList.length - 2].idTarea + 1;
 
     //doy valores al ultimo objeto de taskList qu e esta vacio.
@@ -116,7 +127,6 @@ inputName.addEventListener('keyup', (e) => {
     namesTaskList = taskList.filter(item => item.titulo.toLowerCase().includes(filterName))
     drawMore(namesTaskList);
 })
-
 
 //search by priority:
 

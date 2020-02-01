@@ -29,7 +29,7 @@ select,input {
 }
 
 input:focus,
-select:focus {
+select:focus, select:active {
     outline: none;
 }
 
@@ -45,11 +45,16 @@ header .search{
 main article {
     position: relative;
     padding: 1.5em;
-    box-shadow:0 0 4px #ccc;
+    /* box-shadow:0 0 4px black; */
+    box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
     color: white;
     letter-spacing: 1px;
     font-weight: 300;
-    text-shadow: 1px 1px 1px #787878;
+    text-shadow: 1px 1px 1px rgb(120, 120, 120,.6);
+}
+
+main article:last-child{
+    box-shadow: none;
 }
 
 .urgent{
