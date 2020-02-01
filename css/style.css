@@ -1,0 +1,101 @@
+@import url(reset.css);
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: "Helvetica-Neue", sans-serif;
+    font-size: 1em;
+    padding: 0 2em;
+}
+
+#wrapper{
+    max-width: 35em;
+    min-width: 18em;
+    margin: 2em auto;
+    box-shadow:0 0 10px #bbb;
+    border-radius: 20px;
+}
+
+select,input {
+    -webkit-appearance: none;
+    border: none;
+    color: #444;
+    background-color: #eee;
+    padding: .5em;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: .5em;
+
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+header .type{
+    padding: 1em;
+    border-bottom: 2px solid #ccc;
+}
+
+header .search{
+    padding: 1em;
+}
+
+main article {
+    position: relative;
+    padding: 1.5em;
+    box-shadow:0 0 4px #ccc;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-shadow: 1px 1px 1px #787878;
+}
+
+.urgent{
+    background-color: rgb(52, 199, 89, 0.8);
+}
+
+.urgent:hover{
+    background-color: rgb(52, 199, 89, 1);
+}
+
+.daily{
+    background-color: rgb(90, 200, 250, 0.8);
+}
+
+.daily:hover{
+    background-color: rgb(90, 200, 250, 1);
+}
+
+.monthly{
+    background-color: rgb(255, 204, 0,0.8);
+}
+
+.monthly:hover{
+    background-color: rgb(255, 204, 0,1);
+}
+
+main article a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background-color: rgb(255, 59, 48);
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 1.5em;
+    transition: .5s;
+}
+main article a:hover{
+    width: 100%;
+}
+
+footer{
+	padding: 10px;
+    font-size: .7em;
+    color: dimgray;
+    text-align: right;
+}
