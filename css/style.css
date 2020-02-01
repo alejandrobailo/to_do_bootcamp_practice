@@ -1,19 +1,31 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 @import url(reset.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 *{
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 body{
-	font-family: "Helvetica-Neue", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1em;
     padding: 0 2em;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f3e7e9), color-stop(99%, #e3eeff), to(#e3eeff));
+    background-image: -o-linear-gradient(bottom, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    min-height: 100vh;
 }
 
 #wrapper{
     max-width: 35em;
     min-width: 18em;
-    margin: 2em auto;
-    box-shadow:0 0 10px #bbb;
+    margin: 4em auto;
+    -webkit-box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
+            box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
+
     border-radius: 20px;
+    background-color: white;
 }
 
 select,input {
@@ -46,15 +58,15 @@ main article {
     position: relative;
     padding: 1.5em;
     /* box-shadow:0 0 4px black; */
-    box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
+            box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
     color: white;
-    letter-spacing: 1px;
-    font-weight: 300;
-    text-shadow: 1px 1px 1px rgb(120, 120, 120,.6);
+    text-shadow: 1px 1px 1px rgb(120, 120, 120,.4);
 }
 
 main article:last-child{
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .urgent{
@@ -92,10 +104,14 @@ main article a{
     text-decoration: none;
     color: white;
     padding: 1.5em;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
 }
 main article a:hover{
     width: 100%;
+    -webkit-box-shadow: inset 10px 0px 40px -10px rgba(255,255,255,1);
+            box-shadow: inset 10px 0px 40px -10px rgba(255,255,255,1);
 }
 
 footer{
@@ -103,4 +119,23 @@ footer{
     font-size: .7em;
     color: dimgray;
     text-align: right;
+}
+
+@media only screen and (max-width: 360px){
+    form{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    form>input, form>select{
+        margin-bottom: 5px;
+        text-align: left;
+    }
 }
