@@ -98,6 +98,12 @@ function newTask() {
     taskList[taskList.length - 1].prioridad = priority;
     taskList[taskList.length - 1].idTarea = id;
     drawOne(id);
+    //restauro el objeto
+    taskObj = {
+        'idTarea': 0,
+        'titulo': '',
+        'prioridad': ''
+    }
 }
 
 //search your task event:
@@ -106,8 +112,19 @@ let inputName = document.querySelector('#search');
 let namesTaskList = new Array();
 
 inputName.addEventListener('keyup', (e) => {
-    let filterName = e.target.value;
+    let filterName = e.target.value.toLowerCase();
     namesTaskList = taskList.filter(item => item.titulo.toLowerCase().includes(filterName))
     drawMore(namesTaskList);
 })
 
+
+//search by priority:
+
+let inputPriority = document.querySelector('#filterPriority');
+let priorityTaskList = new Array();
+
+inputPriority.addEventListener('click', (e) => {
+    let filterPriority = e.target.value;
+    priorityTaskList = namesTaskList.filter(item => item.prioridad.includes(filterPriority))
+    drawMore(priorityTaskList);
+})
