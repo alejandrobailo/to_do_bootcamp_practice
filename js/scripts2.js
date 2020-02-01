@@ -50,6 +50,12 @@ function drawOne(pId) {
     captureDelelteBtn();
 }
 
+//draw more than one:
+
+function drawMore(pList) {
+    sectionCreate.innerHTML = '';
+    pList.forEach(item => drawOne(item.idTarea))
+}
 
 //deleteOne:
 
@@ -93,3 +99,15 @@ function newTask() {
     taskList[taskList.length - 1].idTarea = id;
     drawOne(id);
 }
+
+//search your task event:
+
+let inputName = document.querySelector('#search');
+let namesTaskList = new Array();
+
+inputName.addEventListener('keyup', (e) => {
+    let filterName = e.target.value;
+    namesTaskList = taskList.filter(item => item.titulo.toLowerCase().includes(filterName))
+    drawMore(namesTaskList);
+})
+
