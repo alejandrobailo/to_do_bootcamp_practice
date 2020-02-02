@@ -19,25 +19,43 @@ body{
 
 #wrapper{
     max-width: 35em;
-    min-width: 18em;
+    min-width: 18.5em;
     margin: 4em auto;
     -webkit-box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
             box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
-
+    overflow: hidden;
     border-radius: 20px;
     background-color: white;
 }
 
 select,input {
     -webkit-appearance: none;
-    border: none;
-    color: #444;
-    background-color: #eee;
+    border: 1px solid #ccc;
+    color: #777777;
     padding: .5em;
-    border-radius: 4px;
+    border-radius: 20px;
     text-decoration: none;
     margin-right: .5em;
+    background: none;
+}
 
+.save{
+    float: right;
+    border-radius: 50%;
+    width: 35px;
+    background-color: tomato;
+    color: white;
+    font-size: 1em;
+    line-height: 18 px;
+    border: none;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.save:hover{
+    transform: scale(1.1);
+    -webkit-box-shadow: inset 0px 0px 20px -10px rgba(255,255,255,1);
+            box-shadow: inset 0px 0px 20px -10px rgba(255,255,255,1);
 }
 
 input:focus,
@@ -46,7 +64,7 @@ select:focus, select:active {
 }
 
 header .type{
-    padding: 1em;
+    padding: 1em .3em 1em 1em;
     border-bottom: 2px solid #ccc;
 }
 
@@ -57,11 +75,11 @@ header .search{
 main article {
     position: relative;
     padding: 1.5em;
-    /* box-shadow:0 0 4px black; */
     -webkit-box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
             box-shadow: 2px 11px 14px -4px rgba(0,0,0,0.5);
     color: white;
     text-shadow: 1px 1px 1px rgb(120, 120, 120,.4);
+    overflow: hidden;
 }
 
 main article:last-child{
@@ -98,8 +116,8 @@ main article a{
     top: 0;
     right: 0;
     display: block;
-    background-color: rgb(255, 59, 48);
-    width: 100px;
+    background-color: tomato;
+    width: 60px;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -121,7 +139,7 @@ footer{
     text-align: right;
 }
 
-@media only screen and (max-width: 360px){
+@media only screen and (max-width: 401px){
     form{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -137,5 +155,10 @@ footer{
     form>input, form>select{
         margin-bottom: 5px;
         text-align: left;
+    }
+
+    .save{
+        text-align: center;
+        float: none;
     }
 }

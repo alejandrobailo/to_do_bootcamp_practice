@@ -45,7 +45,7 @@ function drawOne(pId) {
     let task = taskList.find(item => item.idTarea == pId)
     sectionCreate.innerHTML += `<article id="${task.idTarea}" class="${task.prioridad}">
     <h2>${task.titulo}</h2>
-    <a href="#" title="delete">Delete</a>
+    <a href="#" title="delete"><i class="fas fa-minus-square"></i></a>
 </article>`
 
     //cada vez que creo una tarea capturo su boton de borrado para un futuro uso.
