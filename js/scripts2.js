@@ -36,6 +36,8 @@ let taskObj = {
 
 let sectionCreate = document.querySelector('#create');
 
+let i = 1;
+
 
 //drawOne:
 
@@ -48,6 +50,7 @@ function drawOne(pId) {
 
     //cada vez que creo una tarea capturo su boton de borrado para un futuro uso.
     captureDelelteBtn();
+    i++;
 }
 
 //draw more than one:
@@ -62,6 +65,8 @@ function drawMore(pList) {
 function deleteOne(pId) {
     let deleted = document.getElementById(pId);
     sectionCreate.removeChild(deleted);
+    let deletedIndex = taskList.findIndex(item => item.idTarea == pId);
+    taskList.splice(deletedIndex, 1);
 }
 
 //delete event:
@@ -88,7 +93,6 @@ saveBtn.addEventListener('click', e => {
 
     //validaciones:
     if (priority != '' && name[0] != 0 && name != '') {
-        taskList.push(taskObj);
         newTask();
     }
 
@@ -96,15 +100,14 @@ saveBtn.addEventListener('click', e => {
     document.querySelector('#form').reset();
 })
 
-
 //capture inputs new task
 
 function newTask() {
     name = document.querySelector('#type').value
     priority = document.querySelector('#priority').value
-    let id = taskList[taskList.length - 2].idTarea + 1;
-
-    //doy valores al ultimo objeto de taskList qu e esta vacio.
+    let id = i;
+    taskList.push(taskObj);
+    //doy valores al ultimo objeto de taskList que esta vacio.
     taskList[taskList.length - 1].titulo = name;
     taskList[taskList.length - 1].prioridad = priority;
     taskList[taskList.length - 1].idTarea = id;
@@ -138,3 +141,7 @@ inputPriority.addEventListener('click', (e) => {
     priorityTaskList = namesTaskList.filter(item => item.prioridad.includes(filterPriority))
     drawMore(priorityTaskList);
 })
+
+//initial call:
+
+drawMore(taskList);
